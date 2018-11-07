@@ -41,4 +41,8 @@
     <string name="label_lens">Google Lens</string>
     <string name="label_voice_search">Voice search</string>
 
+    <!-- Force stop shortcut -->
+    <string name="recent_task_force_stop_app">Force stop</string>
+    <string name="recents_app_force_stopped">App force stopped</string>
+
 </resources>
