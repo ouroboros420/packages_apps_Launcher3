@@ -45,4 +45,8 @@
     <string name="recent_task_force_stop_app">Force stop</string>
     <string name="recents_app_force_stopped">App force stopped</string>
 
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">Double tap gesture</string>
+    <string name="pref_dt_gesture_summary">Double tap on empty space for screen-off</string>
+
 </resources>
