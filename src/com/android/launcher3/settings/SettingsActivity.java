@@ -158,13 +158,13 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         switch (key) {
             case DT2S_PREFERENCE_KEY:
+            case InvariantDeviceProfile.KEY_DOCK_SEARCH:
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
                 break;
             default:
                 break;
         }
     }
-
 
     private boolean startPreference(String fragment, Bundle args, String key) {
         if (Utilities.ATLEAST_P && getFragmentManager().isStateSaved()) {
