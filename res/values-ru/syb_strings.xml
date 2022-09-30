@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Edit workspace -->
+    <string name="settings_lock_layout_title">Блокировка макета</string>
+    <string name="settings_lock_layout_summary_on">Иконки и виджеты не могут быть добавлены, удалены и перемещены на главный экран</string>
+    <string name="settings_lock_layout_summary_off">Иконки и виджеты могут быть добавлены, удалены и перемещены на главный экран</string>
+    <string name="settings_edit_widgets_error">Невозможно добавить виджеты на главный экран</string>
+
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Показать приложение Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">При свайпе вправо от главного экрана</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">При свайпе влево от главного экрана</string>
+
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Отображать подписи значков на рабочем столе</string>
+    <string name="drawer_show_labels">Отображать подписи значков в меню</string>
+
+    <!-- AppInfo -->
+    <string name="app_info_subtext">Потяните вниз для закрытия</string>
+    <string name="placeholder_string">Загрузка...</string> <!-- Used for preference height loading. -->
+    <string name="app_info_icon_pack">Набор иконок</string>
+    <string name="app_info_icon_pack_none">Нету</string>
+    <string name="app_info_source">Источник</string>
+    <string name="app_info_source_unknown">Неизвестен</string>
+    <string name="app_info_last_update">Последнее обновление</string>
+    <string name="app_info_version">Версия</string>
+    <string name="app_info_more">Ещё</string>
+
+    <!-- Preference default value -->
+    <string name="pref_value_default">По умолчанию</string>
+
+    <!-- Hotseat searchbar -->
+    <string name="label_search">Поиск</string>
+    <string name="label_voice_search">Голосовой поиск</string>
+    <string name="dock_search_title">Панель поиска Google</string>
+    <string name="dock_search_summary">Панель поиска в нижнем док-баре</string>
+
+    <!-- Force stop shortcut -->
+    <string name="recent_task_force_stop_app">Принудительная остановка</string>
+    <string name="recents_app_force_stopped">Приложение остановлено</string>
+
+
+    <!-- Gestures -->
+    <string name="pref_dt_gesture_title">Двойное нажатие</string>
+    <string name="pref_dt_gesture_summary">Дважды нажмите на пустом месте для выключения экрана</string>
+
+</resources>
