@@ -2065,7 +2065,7 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
 
                     if (container != LauncherSettings.Favorites.CONTAINER_HOTSEAT &&
                             cell instanceof LauncherAppWidgetHostView) {
-                        final CellLayout cellLayout = dropTargetLayout;
+
                         // We post this call so that the widget has a chance to be placed
                         // in its final location
 
@@ -2098,8 +2098,16 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
                 }
             } else {
                 // When drag is cancelled, reattach content view back to its original parent.
-                if (mDragInfo.cell instanceof LauncherAppWidgetHostView) {
+                if (cell instanceof LauncherAppWidgetHostView) {
                     d.dragView.detachContentView(/* reattachToPreviousParent= */ true);
+
+                    final CellLayout cellLayout = getParentCellLayoutForView(cell);
+                    boolean pageIsVisible = isVisible(cellLayout);
+
+                    if (pageIsVisible) {
+                        onCompleteRunnable = getWidgetResizeFrameRunnable(options,
+                                (LauncherAppWidgetHostView) cell, cellLayout);
+                    }
                 }
             }
 
@@ -2149,6 +2157,21 @@ public class Workspace<T extends View & PageIndicator> extends PagedView<T>
         if (d.stateAnnouncer != null && !droppedOnOriginalCell) {
             d.stateAnnouncer.completeAction(R.string.item_moved);
         }
+    }
+
+    @Nullable
+    private Runnable getWidgetResizeFrameRunnable(DragOptions options,
+            LauncherAppWidgetHostView hostView, CellLayout cellLayout) {
+        AppWidgetProviderInfo pInfo = hostView.getAppWidgetInfo();
+        if (pInfo != null && pInfo.resizeMode != AppWidgetProviderInfo.RESIZE_NONE
+                && !options.isAccessibleDrag) {
+            return () -> {
+                if (!isPageInTransition()) {
+                    AppWidgetResizeFrame.showForWidget(hostView, cellLayout);
+                }
+            };
+        }
+        return null;
     }
 
     public void onNoCellFound(
